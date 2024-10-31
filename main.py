@@ -25,7 +25,7 @@ while x == True:
         else: 
             print(f"You are training {name}!!")
             cat_attributes["energy"] -= 10
-            cat_attributes["weight"] -= 5
+            cat_attributes["weight"] -= 2
             cat_attributes["intelligence"] += 5
     elif option == "3": 
         if cat_attributes["weight"] >= 30 and cat_attributes["energy"] >= 100:
