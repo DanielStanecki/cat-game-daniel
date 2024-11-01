@@ -26,14 +26,10 @@ while x == True:
             print(f"You are training {name}!!")
             cat_attributes["energy"] -= 10
             cat_attributes["weight"] -= 2
-            cat_attributes["intelligence"] += 5
+            cat_attributes["intelligence"] += 10
     elif option == "3": 
-        if cat_attributes["weight"] >= 30 and cat_attributes["energy"] >= 100:
-            print(f"{name} is too energetic AND needs to eat a bit less!!")
-        elif cat_attributes["energy"] >= 100:
+        if cat_attributes["energy"] >= 100:
             print(f"{name} is already too energetic!!")
-        elif cat_attributes["weight"] >= 30: 
-            print(f"{name} needs to eat less!!")
         else:
             print(f"You are feeding {name}!!")
             cat_attributes["energy"] += 5
@@ -44,14 +40,24 @@ while x == True:
         else:
             print(f"{name} is sleeping.")
             cat_attributes["energy"] += 10
+            cat_attributes["intelligence"] -= 5
     elif option == "5": 
         print(cat_attributes)
     else:
         pass
 
-    if cat_attributes['energy'] <= 0 or cat_attributes["weight"] <= 0:
-        print(f"{name} is dead due to your actions.")
+    if cat_attributes['energy'] <= 0:
+        print(f"{name} is dead due to inhumane extortion over the cat, and you overworking it.")
         x = False 
-        
-
-    
+    elif cat_attributes["weight"] <= 0: 
+        print(f"{name} is dead due to malnourisment. You have neglected it, how dare you?")
+        x= False
+    elif cat_attributes["weight"] >= 40:
+        print(f"{name} is dead due to excess obesity, due to you forcefeeding them.")
+        x = False
+    elif cat_attributes["intelligence"] <= 0:
+        print(f"{name} is dead because they became so stupid that they drank a litre of perfume.")
+        x = False
+    elif cat_attributes["intelligence"] >= 100:
+        print(f"{name} has become too smart and has taken over the world!!")
+        x = False
